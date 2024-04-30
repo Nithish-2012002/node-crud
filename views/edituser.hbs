@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <h1>Edit user</h1>
+    </head>
+    <body>
+        {{#if msg}}
+        <div class="alert">{{msg}}</div>
+        {{/if}}
+
+        {{#each rows}}
+        <form method="post" action="/edituser/{{this.id}}">
+         <div class="form-group">
+            <label for="Name">Name</label>
+            <input type="text" name="name" value="{{this.name}}">
+         </div>
+
+         <div class="form-group">
+            <label for="Age">Age</label>
+            <input type="text" name="age" value="{{this.age}}">
+         </div>
+
+         <div class="form-group">
+            <label for="City">City</label>
+            <input type="text" name="city" value="{{this.city}}">
+         </div>
+         <button>Save Changes</button>
+        </form>
+        {{/each}}
+    </body>
+</html>

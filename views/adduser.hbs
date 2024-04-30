@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <h1>Add new user</h1>
+    </head>
+    <body>
+        {{#if msg}}
+        <div class="alert">{{msg}}</div>
+        {{/if}}
+        <form method="post" action="/adduser">
+         <div class="form-group">
+            <label for="Name">Name</label>
+            <input type="text" name="name">
+         </div>
+
+         <div class="form-group">
+            <label for="Age">Age</label>
+            <input type="text" name="age">
+         </div>
+
+         <div class="form-group">
+            <label for="City">City</label>
+            <input type="text" name="city">
+         </div>
+         <button>Save Details</button>
+        </form>
+    </body>
+</html>

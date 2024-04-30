@@ -1,0 +1,70 @@
+<html>
+<head>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/style.css"/>
+    <h1 align="center" class="text-2xl font:bold">USER INFORMATIONS</h1></head>
+
+<body class="bg-red-500">
+   
+<p><a class="add" href="/adduser">ADD MEMBER</a></p>
+<div class="bg-white-900  mb-4 mt-12 relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class=" w-full border-t text-lg text-left rtl:text-right text-gray-900 dark:text-gray-900 text-center">
+        <thead class="text-lg text-gray-700 uppercase dark:text-gray-400 bg-gray-400 pb-14">
+            <tr>
+                <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+                     ID
+                </th>
+                <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+                     NAME
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    AGE
+                </th>
+                <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+                    CITY
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    EDIT
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    DELETE
+                </th>
+            </tr>
+        </thead>
+        <tbody >
+            {{#each rows}}
+            <tr>
+               
+               <td>{{this.id}}</td>
+               <td>{{this.name}}</td>
+               <td>{{this.age}}</td>
+               <td >{{this.city}}</td>
+               <td ><a class="edit " href="/edituser/{{this.id}}">Edit</a></td>
+               <td ><a onclick="return confirm('Are You Sure? you want to delete?')" class="delete" href="/deleteuser/{{this.id}}">Delete</a></td>
+
+            </tr>
+            {{/each}}
+            {{!-- <tr class="border-b border-gray-400 dark:border-gray-900">
+                <th scope="row" class="text-lg px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                    Ram
+                </th>
+                <td class="px-6 py-4 text-lg">
+                    21
+                </td>
+                <td class="px-6 py-4 bg-gray-50 text-lg dark:bg-gray-800">
+                    madurai
+                </td>
+                <td class="px-6 py-4">
+                    <a href="" class="edit  text-lg">edit</a>
+                </td>
+                <td class="px-6 py-4">
+                    <a href="" class="delete text-lg">delete</a>
+                </td>
+            </tr> --}}
+            
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
